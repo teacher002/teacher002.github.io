@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <title>部署Hexo :: Zhuqirui的杂货铺 - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="环境环境 1.1 安装Git 请参考【1】 e 1.2 安装node.js 下载：http://nodejs.org/download/ 可以下载 node-v0.10.33-x64.msi
+安装时直接保持默认配置即可。
+NOTE：Hexo 3.9.0要求nodejs版本&amp;gt;6.9.0
+Ubuntu下，直接执行下面的命令安装即可：
+sudo apt-get install nodejs sudo apt-get install npm
+配置Github 1.1 建立Repository 建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】 1.2 配置SSH-Key 参考【1】
+安装Hexo 关于Hexo的安装配置过程，请以官方Hexo【2】给出的步骤为准。 3.1 Installation 打开Git命令行，执行如下命令
+$ npm install -g hexo 3.2 Quick Start
+Setup your blog 在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了D:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令
+$ hexo init [info] Copying data [info] You are almost done! Don&amp;rsquo;t forget to run npm install before you start b logging with Hexo!"
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="部署Hexo" />
+<meta property="og:description" content="环境环境 1.1 安装Git 请参考【1】 e 1.2 安装node.js 下载：http://nodejs.org/download/ 可以下载 node-v0.10.33-x64.msi
+安装时直接保持默认配置即可。
+NOTE：Hexo 3.9.0要求nodejs版本&gt;6.9.0
+Ubuntu下，直接执行下面的命令安装即可：
+sudo apt-get install nodejs sudo apt-get install npm
+配置Github 1.1 建立Repository 建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】 1.2 配置SSH-Key 参考【1】
+安装Hexo 关于Hexo的安装配置过程，请以官方Hexo【2】给出的步骤为准。 3.1 Installation 打开Git命令行，执行如下命令
+$ npm install -g hexo 3.2 Quick Start
+Setup your blog 在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了D:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令
+$ hexo init [info] Copying data [info] You are almost done! Don&rsquo;t forget to run npm install before you start b logging with Hexo!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hexo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-13T23:02:20+08:00" />
+<meta property="article:modified_time" content="2024-03-13T23:02:20+08:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="部署Hexo"/>
+<meta name="twitter:description" content="环境环境 1.1 安装Git 请参考【1】 e 1.2 安装node.js 下载：http://nodejs.org/download/ 可以下载 node-v0.10.33-x64.msi
+安装时直接保持默认配置即可。
+NOTE：Hexo 3.9.0要求nodejs版本&gt;6.9.0
+Ubuntu下，直接执行下面的命令安装即可：
+sudo apt-get install nodejs sudo apt-get install npm
+配置Github 1.1 建立Repository 建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】 1.2 配置SSH-Key 参考【1】
+安装Hexo 关于Hexo的安装配置过程，请以官方Hexo【2】给出的步骤为准。 3.1 Installation 打开Git命令行，执行如下命令
+$ npm install -g hexo 3.2 Quick Start
+Setup your blog 在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了D:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令
+$ hexo init [info] Copying data [info] You are almost done! Don&rsquo;t forget to run npm install before you start b logging with Hexo!"/>
+
+
+<link rel="canonical" href="https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hexo/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.984bcf5cb7baf146feef1ec41e5d6ea85666cfbbe6ec4e39ec70642e16d7581c.css">
+
+
+
+
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="https://placehold.co/512/webp" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="" title="Zhuqirui的杂货铺ಠ_ಠ">Zhuqirui的杂货铺ಠ_ಠ</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/" title="🎪主页">🎪主页</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="categories/" title="🎁分类">🎁分类</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="tags/" title="🧢标签">🧢标签</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="search/" title="🔍搜索">🔍搜索</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/" title="→返回">→返回</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/%E9%83%A8%E7%BD%B2hexo/">部署Hexo</a>
+    </h1>
+
+    
+    
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2024-03-13T23:02:20&#43;08:00">
+      2024-03-13
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      4 minutes to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#docs-httphexoiodocsdeploymenthtml">Docs: <a href="http://hexo.io/docs/deployment.html">http://hexo.io/docs/deployment.html</a></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#docs-httphexoiodocsdeploymenthtml-1">Docs: <a href="http://hexo.io/docs/deployment.html">http://hexo.io/docs/deployment.html</a></a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#复制代码">复制代码</a></li>
+    <li><a href="#layout-default">layout: default</a></li>
+  </ul>
+</nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <ol>
+<li>环境环境
+1.1 安装Git
+请参考【1】
+e
+1.2 安装node.js
+下载：http://nodejs.org/download/</li>
+</ol>
+<p>可以下载 node-v0.10.33-x64.msi</p>
+<p>安装时直接保持默认配置即可。</p>
+<p>NOTE：Hexo 3.9.0要求nodejs版本&gt;6.9.0</p>
+<p>Ubuntu下，直接执行下面的命令安装即可：</p>
+<p>sudo apt-get install nodejs
+sudo apt-get install npm</p>
+<ol start="2">
+<li>配置Github
+1.1 建立Repository
+建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】</li>
+</ol>
+<p>1.2 配置SSH-Key
+参考【1】</p>
+<ol start="3">
+<li>安装Hexo
+关于Hexo的安装配置过程，请以官方Hexo【2】给出的步骤为准。</li>
+</ol>
+<p>3.1 Installation
+打开Git命令行，执行如下命令</p>
+<p>$ npm install -g hexo
+3.2 Quick Start</p>
+<ol>
+<li>Setup your blog</li>
+</ol>
+<p>在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了D:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令</p>
+<p>$ hexo init
+[info] Copying data
+[info] You are almost done! Don&rsquo;t forget to run <code>npm install</code> before you start b
+logging with Hexo!
+Hexo随后会自动在目标文件夹建立网站所需要的文件。然后按照提示，运行 npm install（在 /D/Hexo下）</p>
+<p>npm install
+会在D:\Hexo目录中安装 node_modules。</p>
+<ol start="2">
+<li>Start the server</li>
+</ol>
+<p>运行下面的命令（在 /D/Hexo下）</p>
+<p>$ hexo server
+[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+表明Hexo Server已经启动了，在浏览器中打开 http://localhost:4000/，这时可以看到Hexo已为你生成了一篇blog。</p>
+<p>你可以按Ctrl+C 停止Server。</p>
+<ol start="3">
+<li>Create a new post</li>
+</ol>
+<p>新打开一个git bash命令行窗口，cd到/D/Hexo下，执行下面的命令</p>
+<p>$ hexo new &ldquo;My New Post&rdquo;
+[info] File created at d:\Hexo\source_posts\My-New-Post.md
+刷新http://localhost:4000/，可以发现已生成了一篇新文章 &ldquo;My New Post&rdquo;。</p>
+<p>NOTE：</p>
+<p>有一个问题，发现 &ldquo;My New Post&rdquo; 被发了2遍，在Hexo server所在的git bash窗口也能看到create了2次。</p>
+<p>$ hexo server
+[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+[create] d:\Hexo\source_posts\My-New-Post.md
+[create] d:\Hexo\source_posts\My-New-Post.md
+经验证，在hexo new &ldquo;My New Post&rdquo; 时，如果按Ctrl+C将hexo server停掉，就不会出现发2次的问题了。</p>
+<p>所以，在hexo new文章时，需要stop server。</p>
+<ol start="4">
+<li>Generate static files</li>
+</ol>
+<p>执行下面的命令，将markdown文件生成静态网页。</p>
+<p>$ hexo generate
+该命令执行完后，会在 D:\Hexo\public\ 目录下生成一系列html，css等文件。</p>
+<ol start="5">
+<li>编辑文章</li>
+</ol>
+<p>hexo new &ldquo;My New Post&quot;会在D:\Hexo\source_posts目录下生成一个markdown文件：My-New-Post.md</p>
+<p>可以使用一个支持markdown语法的编辑器（比如 Sublime Text 2）来编辑该文件。</p>
+<ol start="6">
+<li>部署到Github</li>
+</ol>
+<p>部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
+<h1 id="deployment">Deployment</h1>
+<h2 id="docs-httphexoiodocsdeploymenthtml">Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">http://hexo.io/docs/deployment.html</a>
+</h2>
+<p>deploy:
+type:
+然后将它们修改为</p>
+<p>复制代码</p>
+<h1 id="deployment-1">Deployment</h1>
+<h2 id="docs-httphexoiodocsdeploymenthtml-1">Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">http://hexo.io/docs/deployment.html</a>
+</h2>
+<p>deploy:
+type: github
+repository: <a href="mailto:git@github.com">git@github.com</a>
+:zhchnchn/zhchnchn.github.io.git
+branch: master
+复制代码
+NOTE1:</p>
+<p>Repository：必须是SSH形式的url（git@github.com:zhchnchn/zhchnchn.github.io.git），而不能是HTTPS形式的url（https://github.com/zhchnchn/zhchnchn.github.io.git），否则会出现错误：</p>
+<p>$ hexo deploy
+[info] Start deploying: github
+[error] <a href="https://github.com/zhchnchn/zhchnchn.github.io" target="_blank" rel="noopener">https://github.com/zhchnchn/zhchnchn.github.io</a>
+ is not a valid repositor URL!
+使用SSH url，如果电脑没有开放SSH 端口，会致部署失败。</p>
+<p>fatal: Could not read from remote repository.</p>
+<p>Please make sure you have the correct access rights
+and the repository exists.
+NOTE2：</p>
+<p>如果你是为一个项目制作网站，那么需要把branch设置为gh-pages。</p>
+<ol start="7">
+<li>测试</li>
+</ol>
+<p>当部署完成后，在浏览器中打开http://zhchnchn.github.io/（https://zhchnchn.github.io/） ，正常显示网页，表明部署成功。</p>
+<ol start="8">
+<li>总结：部署步骤</li>
+</ol>
+<p>每次部署的步骤，可按以下三步来进行。</p>
+<p>hexo clean
+hexo generate
+hexo deploy
+9. 总结：本地调试</p>
+<ol>
+<li>在执行下面的命令后，</li>
+</ol>
+<p>$ hexo g #生成
+$ hexo s #启动本地服务，进行文章预览调试
+浏览器输入http://localhost:4000，查看搭建效果。此后的每次变更_config.yml 文件或者新建文件都可以先用此命令调试，尤其是当你想调试新添加的主题时。</p>
+<ol start="2">
+<li>可以用简化的一条命令</li>
+</ol>
+<p>hexo s -g
+3.3 命令总结
+3.3.1 常用命令
+复制代码
+hexo new &ldquo;postName&rdquo; #新建文章
+hexo new page &ldquo;pageName&rdquo; #新建页面
+hexo generate #生成静态页面至public目录
+hexo server #开启预览访问端口（默认端口4000，&lsquo;ctrl + c&rsquo;关闭server）
+hexo deploy #将.deploy目录部署到GitHub
+hexo help  # 查看帮助
+hexo version  #查看Hexo的版本
+复制代码
+3.3.2 复合命令
+hexo deploy -g<br>
+#生成加部署
+hexo server -g<br>
+#生成加预览
+命令的简写为：</p>
+<p>hexo n == hexo new
+hexo g == hexo generate
+hexo s == hexo server
+hexo d == hexo deploy
+4 配置Hexo
+4.1 配置文件介绍
+下面的各个部分的介绍，请直接参考【3】。</p>
+<ol>
+<li>
+<p>默认目录结构介绍</p>
+</li>
+<li>
+<p>_config.yml配置文件介绍</p>
+</li>
+</ol>
+<p>NOTE：在修改_config.yml配置文件时，按照【3】的介绍进行修改后，重新 hexo clean 或者hexo deploy时，可能会出现如下错误：</p>
+<p>复制代码
+$ hexo clean
+[error] { name: &lsquo;HexoError&rsquo;,
+reason: &lsquo;can not read a block mapping entry; a multiline key may not be an imp
+licit key&rsquo;,
+mark:
+{ name: null,
+buffer: &lsquo;# Hexo Configuration\n## Docs: <a href="http://hexo.io/docs/configuration.h" target="_blank" rel="noopener">http://hexo.io/docs/configuration.h</a>
+
+tml\n## Source: <a href="https://github.com/hexojs/hexo/" target="_blank" rel="noopener">https://github.com/hexojs/hexo/</a>
+\n\n# Site\ntitle: Zhchnchn\nsubt
+itle: Coding on the way\ndescription: Zhchnchn's blog\nauthor: Zhchnchn\nemail:
+<a href="mailto:115063497@qq.com">115063497@qq.com</a>
+\nlanguage:zh-CN\n\n# URL\n## If your site is put in a subdirect
+&hellip;&hellip;
+,
+position: 249,
+line: 12,
+column: 0 },
+message: &lsquo;Config file load failed&rsquo;,
+domain:
+{ domain: null,
+_events: { error: [Function] },
+_maxListeners: 10,
+members: [ [Object] ] },
+domainThrown: true,
+stack: undefined }
+复制代码
+我的_config.yml配置文件是一个空行，所以错误肯定在前面，经过对比发现，我前面修改了一下 # Site的各项设置，在冒号:后面没留空格导致了该问题，请对比一下下面的区别：</p>
+<p>错误的设置：</p>
+<p>author:Zhchnchn
+email:XXX@qq.com
+language:zh-CN
+正确的设置：</p>
+<p>author: Zhchnchn
+email: <a href="mailto:XXX@qq.com">XXX@qq.com</a>
+
+language: zh-CN
+3. 各个主题下的目录介绍（hexo\themes\下的modernist主题为例）</p>
+<p>4.2 安装主题
+Hexo提供了很多主题，具体可参见Hexo Themes【4】。这里我选择使用Pacman主题。具体设置方法如下【5】</p>
+<p>4.2.1 安装</p>
+<ol>
+<li>将Git Shell 切到/D/Hexo目录下，然后执行下面的命令，将pacman下载到 themes/pacman 目录下。</li>
+</ol>
+<p>$ git clone <a href="https://github.com/A-limon/pacman.git" target="_blank" rel="noopener">https://github.com/A-limon/pacman.git</a>
+ themes/pacman
+2. 修改你的博客根目录/D/Hexo下的config.yml配置文件中的theme属性，将其设置为pacman。</p>
+<ol start="3">
+<li>更新pacman主题</li>
+</ol>
+<p>cd themes/pacman
+git pull
+NOTE：先备份_config.yml 文件后再升级</p>
+<p>4.2.2 配置
+如果pacman的默认设置不能满足需要的话，你可以修改 /themes/pacman/下的配置文件_config.yml来定制。</p>
+<p>各个config的含义，请参考【5】中的介绍。</p>
+<p>4.2.3 评论框
+静态博客要使用第三方评论系统，pacman配置了多说评论系统（/themes/pacman/_config.yml），默认关闭，只要将其打开即可:false-&gt;true。直接用你的微博/豆瓣/人人/百度/开心网帐号登录多说，即可发表平评论。</p>
+<h4 id="comment">Comment</h4>
+<p>duoshuo:
+enable: true  ## duoshuo.com
+short_name:    ## duoshuo short name.
+4.2.3 统计</p>
+<ol>
+<li>
+<p>pacman配置了google analysis系统（/themes/pacman/_config.yml），默认关闭，将其打开。</p>
+</li>
+<li>
+<p>需要注册google analysis服务，以获得 跟踪 ID。</p>
+</li>
+</ol>
+<p>如果已有google账户的话，可以直接注册。注册时，需要正确填写 网站的URL。注册成功后，会得到一个跟踪ID，以及一段跟踪代码。</p>
+<ol start="3">
+<li>pacman配置了google analysis系统，将其打开</li>
+</ol>
+<h4 id="analytics">Analytics</h4>
+<p>google_analytics:
+enable: true
+id: UA-57032437-1  ## e.g. UA-1766729-8 your google analytics ID.
+site: auto ## e.g. yangjian.me your google analytics site or set the value as auto.
+4. 在themes\pacman\layout_partial\google_analytics.ejs 中，已经将google的跟踪代码添加进来了【3】。</p>
+<p>复制代码
+&lt;% if (theme.google_analytics.enable){ %&gt;</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>&lt;% } %&gt;
+复制代码
+而且会将/themes/pacman/_config.yml中的id和site值读取进来。</p>
+<ol start="5">
+<li>如果设置不起作用，请试试在\themes\pacman\layout_partial\head.ejs文件中最后，<!-- raw HTML omitted -->之前，添加上下面的语句试试。</li>
+</ol>
+<p>&lt;%- partial(&lsquo;google_analytics&rsquo;) %&gt;
+4.3 Custom 404页面</p>
+<ol>
+<li>
+<p>网上大多数教程都将其说的极其简单：“直接在根目录下创建自己的 404.html 就可以”。但我却在这儿废了不少时间，究其原因是大家觉得太简单而说的不够明白。“根目录下”指的不是Hexo目录下，而是Hexo/source目录下。</p>
+</li>
+<li>
+<p>404.html的内容可以设置为下面的内容【6】（NOTE： _config.yml中的permalink_defaults属性不需要修改）。</p>
+</li>
+</ol>
+<h2 id="复制代码">复制代码</h2>
+<h2 id="layout-default">layout: default</h2>
+<!-- raw HTML omitted -->
+<p>4.4 安装插件
+4.4.1 sitemap插件</p>
+<ol>
+<li>
+<p>可以将你站点地图提交给搜索引擎，文件路径\sitemap.xml。</p>
+</li>
+<li>
+<p>安装</p>
+</li>
+</ol>
+<p>$ npm install</p>
+<pre tabindex="0"><code>hexo-generator-sitemap
+</code></pre><ol start="3">
+<li>启用，修改Hexo_config.yml，增加以下内容</li>
+</ol>
+<p>复制代码</p>
+<pre tabindex="0"><code># Extensions
+Plugins:
+- hexo-generator-sitemap
+</code></pre><pre tabindex="0"><code>#sitemap
+sitemap:
+  path: sitemap.xml
+</code></pre><p>复制代码
+4. 使用方法</p>
+<p>（1）访问 http://localhost:4000/sitemap.xml，即可看到站点地图。</p>
+<p>（2）那么怎么将它显示在页面中呢【7】？</p>
+<p>可以修改themes/pacman（也就是你正在使用的那个theme）下的 _config.yml，在 menu 节点下添加下面的内容（下面要介绍的RSS插件也同样）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>menu:
+</span></span><span style="display:flex;"><span>  Home: <span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>  Archives: <span style="color:#f92672">/</span>archives
+</span></span><span style="display:flex;"><span>  Rss: <span style="color:#f92672">/</span>atom.xml
+</span></span><span style="display:flex;"><span>  Sitemap: <span style="color:#f92672">/</span>sitemap.xml
+</span></span></code></pre></div><p>修改后的效果如图所示：</p>
+<ol start="5">
+<li>如何向google提交sitemap</li>
+</ol>
+<p>Sitemap 可方便管理员通知搜索引擎他们网站上有哪些可供抓取的网页。向google提交自己hexo博客的sitemap，有助于让别人更好地通过google搜索到自己的博客。</p>
+<p>如何向google提交sitemap，请参考【8】。</p>
+<ol start="6">
+<li>升级插件</li>
+</ol>
+<pre tabindex="0"><code class="language-data" data-lang="data">$ npm update
+</code></pre><ol start="7">
+<li>卸载插件</li>
+</ol>
+<pre tabindex="0"><code class="language-data" data-lang="data">$ npm uninstall hexo-generator-sitemap
+</code></pre><p>4.4.2 feed插件</p>
+<ol>
+<li>
+<p>RSS的生成插件，你可以在配置显示你站点的RSS，文件路径\atom.xml。</p>
+</li>
+<li>
+<p>安装</p>
+</li>
+</ol>
+<p>$ npm install hexo-generator-feed
+3. 启用，修改Hexo_config.yml，增加以下内容</p>
+<p>复制代码</p>
+<h1 id="extensions">Extensions</h1>
+<p>Plugins:</p>
+<ul>
+<li>hexo-generator-feed</li>
+<li>hexo-generator-sitemap</li>
+</ul>
+<p>#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+复制代码
+4.使用方法</p>
+<p>参见sitemap插件介绍</p>
+<ol start="5">
+<li>优化Hexo
+5.1 添加“Fork me on Github” ribbon
+给blog主页添加一个“Fork me on Github”的绶带（ribbon）【9】，比如选择了红色的ribbon，将相应代码复制到Hexo正在使用的theme下layout.ejs中。比如我使用的pacman theme，那么将下面的代码（注意将you改为你自己的github上的注册名）</li>
+</ol>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->
+粘贴到 themes\pacman\layout\layout.ejs中，放置在 最后，标签<!-- raw HTML omitted -->之前即可。</p>
+<p>6 其他
+6.1 中文乱码
+在md 文件中写中文内容，发布出来后为乱码，原因是md的编码不对，将md文件另存为“UTF-8”编码的文件即可解决问题。</p>
+<p>References
+【1】Windows下Git安装指南（http://www.cnblogs.com/zhcncn/p/3787849.html）</p>
+<p>【2】Hexo （https://github.com/hexojs/hexo）</p>
+<p>【3】hexo你的博客（http://ibruce.info/2013/11/22/hexo-your-blog/）</p>
+<p>【4】Hexo All Themes（https://github.com/hexojs/hexo/wiki/Themes）</p>
+<p>【5】Pacman主题介绍（http://yangjian.me/pacman/hello/introducing-pacman-theme/）</p>
+<p>【6】hexo添加404页面(<a href="http://ruocaiwu.github.io/2014/08/14/hexo%E6%B7%BB%E5%8A%A0404%E9%A1%B5%E9%9D%A2/" target="_blank" rel="noopener">http://ruocaiwu.github.io/2014/08/14/hexo%E6%B7%BB%E5%8A%A0404%E9%A1%B5%E9%9D%A2/</a>
+)</p>
+<p>【7】如何搭建一个独立博客——简明Github Pages与Hexo教程（http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog/）</p>
+<p>【8】如何向google提交sitemap（详细）(<a href="http://fionat.github.io/blog/2013/10/23/sitemap/" target="_blank" rel="noopener">http://fionat.github.io/blog/2013/10/23/sitemap/</a>
+)</p>
+<p>【9】GitHub Ribbons(<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">https://github.com/blog/273-github-ribbons</a>
+)</p>
+
+    </article>
+
+    
+
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2023 - 2024 
+    
+  </div>
+  
+  <div class="flex flex-row">
+    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
+      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
+    </span>
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.c6372b6836971865bd94bfde974748aca8415824a2facab6ccd66a87384bfacb.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.min.4be95a7068ec721962fd0df64ce1c8673df8035fde465874f1e6e67e2aac7f71.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HydroOJ on Zhuqirui的杂货铺</title>
+    <link>https://teacher002.github.io/tags/hydrooj/</link>
+    <description>Recent content in HydroOJ on Zhuqirui的杂货铺</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 12 Mar 2024 23:02:20 +0800</lastBuildDate>
+    <atom:link href="https://teacher002.github.io/tags/hydrooj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>部署HydroOJ</title>
+      <link>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hydrooj/</link>
+      <pubDate>Tue, 12 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hydrooj/</guid>
+      <description>部署: 这里提供了几套方案帮助您建立自己的站点，请选择适合您的方案并继续。 搭建过程中如果遇到问题欢迎 联系我们 提问。&#xA;服务器选择 不同服务商提供的 $\texttt{CPU}$ 主频不同，下方数据仅供参考。 最低服务器配置： $\texttt{CPU}$: 1核 内存: 2G。（约可允许 100 人使用 请尽量不要使用突发性能实例或共享型实例，这可能会导致评测时间计量不准确 CentOS 8 已于 2021-12-31 停止支持，后续不会为安全漏洞发布补丁，建议重装为其他操作系统。 如果使用虚拟机安装，推荐购买 UPS 保证供电稳定或是经常备份，突然断电易导致数据库损坏无法读取！ $\texttt{Tips}$: 兼容大部分 $\texttt{Linux}$ 发行版，推荐使用 $\texttt{Ubuntu}$ 22.04 （教程多，成功率高，上手简单），以下列表中系统不受支持：$CentOS$ $Alibaba Cloud Linux$ $TencentOS$&#xA;$\texttt{Tips}$: $Hydro$ 需要使用以下端口： $80$, $443$, $2019$, $88884, $5050$, $27017$，请确保这些端口空闲。 安装和安装后的所有操作均需要在 $\texttt{root}$ 权限下进行！（$\texttt{sudo su}$）。 宝塔面板已知出现多次高危漏洞，为防止数据丢失，请不要在生产环境中使用！&#xA;在终端运行下面的脚本，等待几分钟即可（建议复制防止敲错）： LANG=zh . &amp;lt;(curl https://hydro.ac/setup.sh) Tips: 如果有特殊需求，安装脚本支持一些可选的高级选项，以此方式调用： . &amp;lt;(curl https://hydro.ac/setup.sh ) &amp;ndash;foo &amp;ndash;bar &amp;ndash;no-caddy 不配置安装反向代理，只监听8888端口 &amp;ndash;judge 仅作为独立评测机安装&#xA;阿里云/腾讯云/华为云等等用户安装后如果不能访问 请百度搜索 xx云 放行80端口 脚本默认使用的为清华大学镜像。 安装完成后，从 http://服务器ip/ 访问网页端，注册一个账号，之后在终端中使用 hydrooj cli user setSuperAdmin 2 将首个注册用户设置为超级管理员。之后刷新页面，您应当能在上方导航栏看到控制面板入口。 进入控制面板，右侧系统设置，验证管理员密码后按需修改配置，注意 Server BaseURL 一项需要填写访问网站用的完整的 URL，以 / 结尾。（重要，务必正确填写，样例：https://hydro.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <title>Linus Torvalds 不满 Linux 6.9 中的一些 Bcachefs 代码 :: Zhuqirui的杂货铺 - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="cachefs 文件系统自从被纳入 Linux 6.7 内核的上游版本以来，一直保持着良好的运行状态。但现如今，随着 Bcachefs 的功能更新被提交到 Linux 6.9 合并窗口，引发了 Linus Torvalds 对其中一些 proposed code 的不满。
+维护者 Kent Overstreet 将针对 Linux 6.9 的 Bcachefs 改动的拉取请求总结为：
+Subvolume children btree；是为 walking subvolumes 提供用户空间界面所必需的，计划在稍后提供 对目录结构检查进行了大量改进 改进了日志管道，显着提高了 high iodepth write workloads 的性能 Discard path 改进：Discard path 更加高效，并且不再不必要地刷新日志 Buffered write path 现在可以避免占用 inode lock 调出用于 XFS 的各种库代码：time stats、mean_and_variance、darray、eytzinger、thread_with_file 新的 mm helper：memalloc_flags_{saverestore} mempool now does kvmalloc mempools 但让 Linus Torvalds 感到不解的是，这些补丁把 Bcachefs 代码中的一些元素移到了一些 library-type 的代码中，以至于可以轻松地被其他文件系统重用。
+Linus Torvalds 在回应相关 PR 时表示：“我看了看 &amp;lsquo;make random bcachefs code be a library function&amp;rsquo; 的内容，觉得毫无意义，最终决定在没有进一步解释的情况下我不会使用它（老实说，我不认为这些解释站得住脚）。”"
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="Linus Torvalds 不满 Linux 6.9 中的一些 Bcachefs 代码" />
+<meta property="og:description" content="cachefs 文件系统自从被纳入 Linux 6.7 内核的上游版本以来，一直保持着良好的运行状态。但现如今，随着 Bcachefs 的功能更新被提交到 Linux 6.9 合并窗口，引发了 Linus Torvalds 对其中一些 proposed code 的不满。
+维护者 Kent Overstreet 将针对 Linux 6.9 的 Bcachefs 改动的拉取请求总结为：
+Subvolume children btree；是为 walking subvolumes 提供用户空间界面所必需的，计划在稍后提供 对目录结构检查进行了大量改进 改进了日志管道，显着提高了 high iodepth write workloads 的性能 Discard path 改进：Discard path 更加高效，并且不再不必要地刷新日志 Buffered write path 现在可以避免占用 inode lock 调出用于 XFS 的各种库代码：time stats、mean_and_variance、darray、eytzinger、thread_with_file 新的 mm helper：memalloc_flags_{saverestore} mempool now does kvmalloc mempools 但让 Linus Torvalds 感到不解的是，这些补丁把 Bcachefs 代码中的一些元素移到了一些 library-type 的代码中，以至于可以轻松地被其他文件系统重用。
+Linus Torvalds 在回应相关 PR 时表示：“我看了看 &lsquo;make random bcachefs code be a library function&rsquo; 的内容，觉得毫无意义，最终决定在没有进一步解释的情况下我不会使用它（老实说，我不认为这些解释站得住脚）。”" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://teacher002.github.io/posts/linus-torvalds-%E4%B8%8D%E6%BB%A1-linux-6.9-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B-bcachefs-%E4%BB%A3%E7%A0%81/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-14T23:02:20+08:00" />
+<meta property="article:modified_time" content="2024-03-14T23:02:20+08:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Linus Torvalds 不满 Linux 6.9 中的一些 Bcachefs 代码"/>
+<meta name="twitter:description" content="cachefs 文件系统自从被纳入 Linux 6.7 内核的上游版本以来，一直保持着良好的运行状态。但现如今，随着 Bcachefs 的功能更新被提交到 Linux 6.9 合并窗口，引发了 Linus Torvalds 对其中一些 proposed code 的不满。
+维护者 Kent Overstreet 将针对 Linux 6.9 的 Bcachefs 改动的拉取请求总结为：
+Subvolume children btree；是为 walking subvolumes 提供用户空间界面所必需的，计划在稍后提供 对目录结构检查进行了大量改进 改进了日志管道，显着提高了 high iodepth write workloads 的性能 Discard path 改进：Discard path 更加高效，并且不再不必要地刷新日志 Buffered write path 现在可以避免占用 inode lock 调出用于 XFS 的各种库代码：time stats、mean_and_variance、darray、eytzinger、thread_with_file 新的 mm helper：memalloc_flags_{saverestore} mempool now does kvmalloc mempools 但让 Linus Torvalds 感到不解的是，这些补丁把 Bcachefs 代码中的一些元素移到了一些 library-type 的代码中，以至于可以轻松地被其他文件系统重用。
+Linus Torvalds 在回应相关 PR 时表示：“我看了看 &lsquo;make random bcachefs code be a library function&rsquo; 的内容，觉得毫无意义，最终决定在没有进一步解释的情况下我不会使用它（老实说，我不认为这些解释站得住脚）。”"/>
+
+
+<link rel="canonical" href="https://teacher002.github.io/posts/linus-torvalds-%E4%B8%8D%E6%BB%A1-linux-6.9-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B-bcachefs-%E4%BB%A3%E7%A0%81/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.984bcf5cb7baf146feef1ec41e5d6ea85666cfbbe6ec4e39ec70642e16d7581c.css">
+
+
+
+
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="https://placehold.co/512/webp" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="" title="Zhuqirui的杂货铺ಠ_ಠ">Zhuqirui的杂货铺ಠ_ಠ</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/" title="🎪主页">🎪主页</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="categories/" title="🎁分类">🎁分类</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="tags/" title="🧢标签">🧢标签</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="search/" title="🔍搜索">🔍搜索</a>
+        </li>
+      
+    
+        <li id="" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/" title="→返回">→返回</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/linus-torvalds-%E4%B8%8D%E6%BB%A1-linux-6.9-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B-bcachefs-%E4%BB%A3%E7%A0%81/">Linus Torvalds 不满 Linux 6.9 中的一些 Bcachefs 代码</a>
+    </h1>
+
+    
+    
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/linux%E6%96%B0%E9%97%BB/"
+          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          Linux新闻
+        </a>
+      </li>
+      
+    
+    
+      
+      <li>
+        <a href="/tags/ubuntu/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Ubuntu</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/linux/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Linux</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/linus/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Linus</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2024-03-14T23:02:20&#43;08:00">
+      2024-03-14
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      One minute to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents"></nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <p>cachefs 文件系统自从被纳入 Linux 6.7 内核的上游版本以来，一直保持着良好的运行状态。但现如今，随着 Bcachefs 的功能更新被提交到 Linux 6.9 合并窗口，引发了 Linus Torvalds 对其中一些 proposed code 的不满。</p>
+<p>　　维护者 Kent Overstreet 将针对 Linux 6.9 的 Bcachefs 改动的拉取请求总结为：</p>
+<p>Subvolume children btree；是为 walking subvolumes 提供用户空间界面所必需的，计划在稍后提供
+对目录结构检查进行了大量改进
+改进了日志管道，显着提高了 high iodepth write workloads 的性能
+Discard path 改进：Discard path 更加高效，并且不再不必要地刷新日志
+Buffered write path 现在可以避免占用 inode lock
+调出用于 XFS 的各种库代码：time stats、mean_and_variance、darray、eytzinger、thread_with_file
+新的 mm helper：memalloc_flags_{saverestore}
+mempool now does kvmalloc mempools
+　　但让 Linus Torvalds 感到不解的是，这些补丁把 Bcachefs 代码中的一些元素移到了一些 library-type 的代码中，以至于可以轻松地被其他文件系统重用。</p>
+<p>　　Linus Torvalds 在回应相关 PR 时表示：“我看了看 &lsquo;make random bcachefs code be a library function&rsquo; 的内容，觉得毫无意义，最终决定在没有进一步解释的情况下我不会使用它（老实说，我不认为这些解释站得住脚）。”</p>
+<p>　　并直言 &ldquo;stdio_redirect_printf ()&rdquo; 和 darray_char 都很 “恶心”。建议 Overstreet 将其保留在自己的代码中就好，不要试图提交上来。如果实在不死心的话，建议他先做好以下几点：</p>
+<p>多加解释
+有更合理的命名，减少恶心和完全无意义的 interfaces (&ldquo;DARRAY ()&quot;)。</p>
+<p>而且，仅仅找到一个其他文件系统来共享这种代码并不足以证明它是一个合理的 interfaces 和合理的命名。</p>
+<p>但是，最主要的问题是疯狂的数学计算。该死的，我们很久以前就讨论过 &ldquo;mean and variance&rdquo; 这种愚蠢的垃圾。当时就错了，现在还是错的。你没有解释为什么它不能使用简单得多的 MAD（median absolute deviation），而不是使用 variance。这个错误的决定直接导致无意义地使用过于复杂的 128 位数学。</p>
+<p>我当时称其为疯狂的过度工程化，而就我所知，除了一些轻微的类型名称细节外，绝对没有任何变化。</p>
+<p>只要你把它改成某种只适用于 bcachefs 的东西，我就不介意。但现在，你却试图把这些垃圾作为通用库代码推向市场，让其他人也能使用，这就意味着，我会介意这种过度设计的 interfaces。</p>
+<p>在其他方面，time_stats 看上去就像是一个有名称和用途的正常 interfaces，但使用了这种可怕的基础架构后，它就变得不伦不类了。</p>
+<p>　　在 Overstreet 争辩之后，Linus 进一步补充道：</p>
+<p>加权版本的代码字面上没有任何变化。</p>
+<p>variance value 是不同的，但 MAD 和 standard deviation 之间的区别基本上只是一个 constant factor（不同的分布会有所不同，但那又怎样？任何特定情况都会有特定的分布）。那么，为什么 constant factor 会对指数加权产生任何影响呢？</p>
+<p>不管怎样，请随意将您的代码保存在 bcachefs 中。也许 xfs 甚至想复制该代码。我不在乎，这看起来很愚蠢，但这是文件系统的选择。但如果我们要把它打造成一个通用的内核库，它就必须是健全的。不要让人们仅仅为了随机统计元素而进行 64 位平方根和 128 位除法。</p>
+<p>　　因此，就目前情况而言，Linus Torvalds 并没有接受这个针对 Linux 6.9 内核的 Bcachefs 拉取请求。至于后续如何，就要看新的 PR 会不会放弃这些补丁或以其他方式重新修改以满足 Linus 的要求。</p>
+
+    </article>
+
+    
+
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2023 - 2024 
+    
+  </div>
+  
+  <div class="flex flex-row">
+    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
+      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
+    </span>
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.c6372b6836971865bd94bfde974748aca8415824a2facab6ccd66a87384bfacb.js"></script>
+
+
+
+
+</body>
+</html>

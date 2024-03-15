@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Zhuqirui的杂货铺</title>
+    <link>https://teacher002.github.io/posts/</link>
+    <description>Recent content in Posts on Zhuqirui的杂货铺</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 Mar 2024 23:02:20 +0800</lastBuildDate>
+    <atom:link href="https://teacher002.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello, World!</title>
+      <link>https://teacher002.github.io/posts/hello%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/hello%E4%BB%A3%E7%A0%81/</guid>
+      <description>环境配置 工欲善其事，必先利其器。&#xA;集成开发环境 IDE 操作较为简单，一般入门玩家会选用 IDE 来编写代码。在竞赛中最常见的是 Dev-C++（如果考试环境是 Windows 系统，一般也会提供这一 IDE）。&#xA;编译器 Windows 推荐使用 GNU 编译器。需要去 MinGW Distro 下载 MinGW 并安装。此外 Windows 下也可以选择 Microsoft Visual C++ 编译器，需要去 Visual Studio 页面 下载安装。&#xA;macOS 在终端中执行：&#xA;xcode-select --install Linux 使用 g++ -v 来检查是否安装过 g++。&#xA;使用如下命令可以安装：&#xA;sudo apt update &amp;amp;&amp;amp; sudo apt install g++ 在命令行中编译代码 熟练之后也有玩家会使用更灵活的命令行来编译代码，这样就不依赖 IDE 了，而是使用自己熟悉的文本编辑器编写代码。&#xA;g++ test.cpp -o test -lm g++ 是 C++ 语言的编译器（C 语言的编译器为 gcc），-o 用于指定可执行文件的文件名，编译选项 -lm 用于链接数学库 libm，从而使得使用 math.h 的代码可以正常编译运行。</description>
+    </item>
+    <item>
+      <title>Linus Torvalds 不满 Linux 6.9 中的一些 Bcachefs 代码</title>
+      <link>https://teacher002.github.io/posts/linus-torvalds-%E4%B8%8D%E6%BB%A1-linux-6.9-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B-bcachefs-%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/linus-torvalds-%E4%B8%8D%E6%BB%A1-linux-6.9-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B-bcachefs-%E4%BB%A3%E7%A0%81/</guid>
+      <description>cachefs 文件系统自从被纳入 Linux 6.7 内核的上游版本以来，一直保持着良好的运行状态。但现如今，随着 Bcachefs 的功能更新被提交到 Linux 6.9 合并窗口，引发了 Linus Torvalds 对其中一些 proposed code 的不满。&#xA;维护者 Kent Overstreet 将针对 Linux 6.9 的 Bcachefs 改动的拉取请求总结为：&#xA;Subvolume children btree；是为 walking subvolumes 提供用户空间界面所必需的，计划在稍后提供 对目录结构检查进行了大量改进 改进了日志管道，显着提高了 high iodepth write workloads 的性能 Discard path 改进：Discard path 更加高效，并且不再不必要地刷新日志 Buffered write path 现在可以避免占用 inode lock 调出用于 XFS 的各种库代码：time stats、mean_and_variance、darray、eytzinger、thread_with_file 新的 mm helper：memalloc_flags_{saverestore} mempool now does kvmalloc mempools 但让 Linus Torvalds 感到不解的是，这些补丁把 Bcachefs 代码中的一些元素移到了一些 library-type 的代码中，以至于可以轻松地被其他文件系统重用。&#xA;Linus Torvalds 在回应相关 PR 时表示：“我看了看 &amp;lsquo;make random bcachefs code be a library function&amp;rsquo; 的内容，觉得毫无意义，最终决定在没有进一步解释的情况下我不会使用它（老实说，我不认为这些解释站得住脚）。”</description>
+    </item>
+    <item>
+      <title>MarkDown讲解</title>
+      <link>https://teacher002.github.io/posts/xuanzexuanze/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/xuanzexuanze/</guid>
+      <description>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。 它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。 由于 Markdown 的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。 如 GitHub、Reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge、简书等，甚至还能被使用来撰写电子书。 优势 世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho等。用于编写说明文档，以“README.md”的文件名保存在软件的目录下面。Markdown可以快速转化为演讲PPT、Word产品文档甚至是用非常少量的代码完成最小可用原型。&#xA;发展历程 John Gruber在2004年创造了Markdown语言，在语法上有很大一部分是跟亚伦·斯沃茨（Aaron Swartz）共同合作的。这个语言的目的是希望大家使用“易于阅读、易于撰写的纯文字格式，并选择性的转换成有效的XHTML（或是HTML）”。 其中最重要的设计是可读性，也就是说这个语言应该要能直接在字面上的被阅读，而不用被一些格式化指令标记（像是RTF与HTML）。 因此，它是现行电子邮件标记格式的惯例，虽然它也借鉴了很多早期的标记语言，如：Setext、Texile、reStructuredText。 标准化 Markdown已经成为典型的转换为HTML的非正式规范 和参考实现。随着时间的推移，出现了许多Markdown实现。人们开发这些主要是由于在基本语法之上需要额外的功能 - 例如表格，脚注，定义列表（技术上的HTML描述列表）和HTML块内的Markdown。其中一些行为偏离了最开始的参考实现。与此同时，非正式规范中的一些含糊不清引起了人们的注意 。这些问题促使Markdown解析器的一些开发人员努力实现标准化。 2016年3月发布了RFC 7763和RFC 7764。RFC 7763 从原始变体引入了MIME类型 text/markdown。RFC 7764讨论并注册了MultiMarkdown、GitHub Flavored Markdown (GFM)、Pandoc、CommonMark及Markdown等变体。 CommonMark 从2012年开始，包括Jeff Atwood和John MacFarlane在内的一群人启动了标准化工作。一个社区网站旨在记录可用于文档作者和开发人员的各种工具和资源，以及各种markdown实现的实现者。 2014年9月，Gruber反对在这一工作中继续使用“Markdown”这个名字，其被更名为CommonMark。 CommonMark发布了规范、参考实现和测试包的几个版本，并计划在2018年宣布最终的1.0规范和测试包。 GFM 2017年，GitHub发布了基于CommonMark的GitHub Flavored Markdown（GFM）的正式规范。 除了表格、删除线、自动链接和任务列表被GitHub规范作为扩展添加之外，它遵循CommonMark规范。 GitHub还相应地更改了其站点上使用的解析器，这要求更改某些文档 - 例如，GFM要求创建标题的哈希符号由空格字符分隔。 Markdown Extra Markdown Extra是一种轻量级标记语言，基于在PHP（最初）、Python和Ruby中实现的Markdown。它添加了普通Markdown语法不具备的功能。内容管理系统支持Markdown Extra，例如Drupal，TYPO3和MediaWiki。 它为Markdown添加了以下功能： HTML块内的markdown标记 具有id / class属性的元素 围栏代码块 表格 定义清单 脚注 缩写</description>
+    </item>
+    <item>
+      <title>今天是兀日(3.14)</title>
+      <link>https://teacher002.github.io/posts/piday/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/piday/</guid>
+      <description>今天是圆周率日(3.14)3月14日 圆周率日（Pi day） 是庆祝圆周率π的特别日子。正式日期是3月14日，由圆周率最常用的近似值3.14而来。圆周率日是一年一度的庆祝数学常数π的节日，时间被定在3月14日。通常是在下午1时59分庆祝，以象征圆周率的六位近似值3.14159，有时甚至精确到26秒，以象征圆周率的八位近似值3.1415926；习惯24小时记时的人在凌晨1时59分或者下午3时9分（15时9分）庆祝。全球各地的一些大学数学系在这天举办派对。&#xA;发展历史 已知最早的大型以π为主题的庆祝活动是Larry Shaw 组织，1988年3月14日在旧金山科学博物馆举办的。Larry Shaw 是旧金山科学博物馆的一名物理学家，那一天他带着博物馆的员工和参与者一起围绕这博物馆纪念碑做3又1/7圈（22/7，π的近似值之一）的圆周运动，并一起吃水果派，分享有关π的知识。之后，旧金山科学博物馆继承了这个传统，在每年的这一天都举办庆祝活动。美国麻省理工学院首先倡议将3日14日定为国家圆周率日。2009年美国众议院正式通过一项无约束力决议（Non-binding resolution）（HRES 224），将每年的3月14号设定为“圆周率日”（National Pi day）。 2010年的圆周率日，谷歌为表庆祝，推出了π的Google Doodle，图中元素颇丰，不仅包含了圆周率的定义，π值范围，圆周周长与面积公式，甚至还包含了球体积公式以及圆周的外切和内切多边形示意图。&#xA;庆祝方式 庆祝圆周率日的方式有很多，比如吃派，喝一种名字中含有“pi”的鸡尾酒（piña colada），玩和pi 发音相近的彩罐游戏（piñata）。 这一天常见的庆祝方式包括：1.阅读π的悠久历史，学习有关π的数学知识。2.背诵π。π是无理数，很多人通过背诵π小数点后面的数字来表现记忆力。日本人Akira Haraguchi在2005年将π背到了小数点后第 83431 位。3.计算圆周率。2009年，法国著名程序员Fabr ice Bellard用个人PC，耗时116天，计算到了PI的小数点后第2.7万亿位打破了由超级计算机保持的圆周率运算记录。同时Fabrice Bellard在圆周率算法方面也有着惊人的成就，1997年他提出了最快圆周率算法公式。4.观看电影《死亡密码 π》（1998年讲述一个偏执数学家故事的惊悚电影）、《少年派的奇幻漂流》（一个名为pi的少年的冒险故事）。5.做一个以π为主题的派。6.欣赏以π为主题的音乐，例如圆周率之歌。校园活动全球各地的一些大学数学系在这天开派对。加拿大滑铁卢大学则在圆周率日免费供应馅饼。麻省理工学院则经常选择在这一天向学生发出录取通知书，从2012年开始，麻省理工宣布，就会于每年圆周率日的下午6:28分（Pi Day, Tau Time），在自己的网站上公布录取信息，以此表明公平对待π和τ。这是由于在数学中，半径的概念似乎比直径更加深入人心。部分数学家们早已注意到了把圆周率定义为周长和直径之比有所不便，曾在论文中正式地提出这一点，认为π应该由另外一个被称作“tau”的数τ来替代 。但也有数学家表示反对，双方的争论颇为激烈。3月14日也是爱因斯坦的生日，爱因斯坦在普林斯顿生活超过20年之久，因此普林斯顿在这一天举办了众多的活动，庆祝圆周率日兼爱因斯坦生辰。除了常规的吃派以及π值背诵比赛等活动，在这一天还有一个爱因斯坦cosplay比赛。&#xA;文化影响 可能是因为定义简单以及在数学公式中随处可见，π在流行文化中的出现频率及地位远远高于其他数学常数。在麻省理工，一些大学生的庆祝语包括“3.14159”。谷歌在2011年一次收购中，谷歌选择一系列著名常数作为报价，其中就包括π。名为piday.org的网站，是圆周率日官方网站，不仅收集了关于π的各种趣闻，还有以π为主题的商店。&#xA;相关日期 7月22日：圆周率日近似值日。22/7是π的一个近似值， 按美式日期记法，即为7月22日。22/7大于π，有趣的是，它比3.14更加接近π。所以圆周率日近似值日实际上比圆周率日更加精确。 1592年3月14日：终极圆周率日。1592年3月14日上午6时53分以美国式记法就是3/14/1592 6:53，对应了圆周率的十位近似值3.141592653。 6月28日：τ（2π）日。2001 年，美国数学家鲍勃·帕莱（Bob Palais）在《数学情报》（The Mathematical Intelligencer）上发表了一篇题为《π 是错误的！》（π Is Wrong!）的论文。称真正的圆周率日是2π，即τ。虽然很多数学家反对，但也有很多学者赞同鲍勃，美国数学家麦克·哈特尔（Michael Hartl） 建立了网站 tauday.com，呼吁人们用希腊字母 τ（发音：tau）来表示“正确的”圆周率。新圆周率的支持者们选择在 6 月 28 日庆祝“真正的”圆周率日。 2019年，国际数学联盟（IMU）正式向联合国教科文组织（UNESCO）提出申请，并于同年11月由联合国大会通过，将每年的3月14日设为“国际数学日”（The International Day of Mathematics）。</description>
+    </item>
+    <item>
+      <title>六上古诗(1)</title>
+      <link>https://teacher002.github.io/posts/%E5%85%AD%E4%B8%8A%E5%8F%A4%E8%AF%971/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/%E5%85%AD%E4%B8%8A%E5%8F%A4%E8%AF%971/</guid>
+      <description>寒食 [唐]韩翃 春城无处不飞花，寒食东风御柳斜。&#xA;日暮汉宫传蜡烛，轻烟散入五侯家。&#xA;迢迢牵牛星 [汉] 迢迢牵牛星，皎皎河汉女。 纤纤擢素手，札札弄机杼。 终日不成章，泣涕零如雨。 河汉清且浅，相去复几许！ 盈盈一水间，脉脉不得语。&#xA;十五夜望月 [唐]王建 中庭地白树栖鸦，冷露无声湿桂花。&#xA;今夜月明人尽望，不知秋思落谁家。&#xA;未完待续~ </description>
+    </item>
+    <item>
+      <title>我在TikTok上卖车给老外，三个月入账2000万</title>
+      <link>https://teacher002.github.io/posts/%E6%88%91%E5%9C%A8tiktok%E4%B8%8A%E5%8D%96%E8%BD%A6%E7%BB%99%E8%80%81%E5%A4%96%E4%B8%89%E4%B8%AA%E6%9C%88%E5%85%A5%E8%B4%A62000%E4%B8%87/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/%E6%88%91%E5%9C%A8tiktok%E4%B8%8A%E5%8D%96%E8%BD%A6%E7%BB%99%E8%80%81%E5%A4%96%E4%B8%89%E4%B8%AA%E6%9C%88%E5%85%A5%E8%B4%A62000%E4%B8%87/</guid>
+      <description>文雪豹财经社王亚骏&#xA;抱着&amp;quot;反正亏不了多少钱&amp;quot;的心态，安岚（化名）在 TikTok 上试着把中国汽车卖给老外。短短一个季度，她就拿下了 2000 万元的营收，而投入仅 2000 元左右。&#xA;在此之前，她从未有过任何销售工作经验。&#xA;去年 8 月初，安岚带着一身的疲惫从某互联网大厂裸辞，&amp;ldquo;想躺一段时间&amp;rdquo;。但一条新闻让她打消了休息的念头：2023 年上半年，中国汽车出口量同比增超 70%。&amp;ldquo;我一直以为，中国汽车在国外卖不动的。&amp;rdquo;&#xA;她模模糊糊觉得，这其中可能有赚钱的机会。虽然对汽车、对出口贸易都处于&amp;quot;很懵&amp;quot;的状态，但安岚还是决定尽快出国看一看。&#xA;从零起步，用了一个多月时间，安岚摸索出了一套低成本的获客方式，并在解决资金周转的大问题后，跑通了整个交易流程。去年 10 月开始，她迎来了&amp;quot;打开水龙头般&amp;quot;的订单。&#xA;让安岚&amp;quot;一季暴富&amp;quot;的生意，用专业术语描述的话，就是&amp;quot;汽车平行出口&amp;quot;——非官方授权经销商，将国内的新车以二手车的形式出口到国外。据乘联会秘书长崔东树估算，2023 年，中国的汽车平行出口量超过 30 万辆，是 2021 年二手车出口总量的 20 倍有余。&#xA;2024 年，踌躇满志的安岚制定了 2 亿元的营收目标。但与此同时，也有不少同行正在悄悄撤离这个行业。&#xA;混乱是阶梯&#xA;比什凯克，吉尔吉斯斯坦的首都，目前是中国汽车出口到俄罗斯的中转站，也是安岚的考察地。&#xA;混乱，是这里给她的第一印象。行色匆忙的中国商人，满载着中国汽车的托运车，是她在比什凯克看到最多的景象，&amp;ldquo;就像一个巨型露天集市一样&amp;rdquo;。&#xA;所有混乱都指向一个判断：目前在俄罗斯，中国汽车不愁卖不动。&#xA;据乘联会数据，2023 年，中国出口俄罗斯汽车销量为 91 万辆，同比增长 459%，是中国汽车出口增量最大的单一市场。&#xA;混乱也让安岚意识到，这一行还没有明显的壁垒，这意味着普通人也可以参与。她摸索出了一个低成本的商业模式：把汽车素材发到 TikTok、Facebook 和 instagram 上，吸引吉国的经销商私信下单，她再从国内 4S 店或车企的大客户渠道拿到车发给客户。&#xA;注册账号、线上展示、获取流量、在线沟通&amp;hellip;&amp;hellip;对有互联网大厂工作经验的安岚而言，这一套可谓轻车熟路。她在社交平台上投入的推广费一共只有 2000 元左右，&amp;ldquo;公司就我和老公两个人，办公场地在家，办公设施就是两台电脑，两部手机&amp;rdquo;。&#xA;不过安岚很快就发现，她把这件事想简单了。&#xA;客户找安岚下单后，需要先向她支付订单总金额 30% 的预付款，再由她全款订购客户需要的汽车，这就需要安岚先垫付剩下 70% 的资金。&#xA;在等待第一笔订单到来的时间里，安岚是在忐忑中度过的，因为她无法预测第一笔订单会有多少辆车、需要垫多少钱、这笔钱家里能不能拿出来。&#xA;9 月下旬，安岚从 Instagram 上收获了第一笔订单：4 辆蓝色吉利星越L，客户来自俄罗斯。想完成这笔订单，她得垫付近 60 万元。&amp;ldquo;这笔钱对我来说已经压力很大了，下次如果客户下单 40 辆，又该怎么办？&amp;rdquo;&#xA;她想起来自己有一位做外贸的朋友，通过朋友介绍，她向一家二手汽车出口试点企业提交了垫资申请。因为手中有订单，申请得到了批准，这笔订单也顺利成交。&#xA;通过这笔交易，安岚跑通了卖车的整个流程。&#xA;在这次淘金之旅中，带给安岚最多收益的是新能源汽车。2023 年第四季度，新能源汽车出口带来的营收占了安岚总营收的 80%，其中理想汽车贡献了近一半。</description>
+    </item>
+    <item>
+      <title>常用排序</title>
+      <link>https://teacher002.github.io/posts/%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Wed, 13 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F/</guid>
+      <description>1冒泡排序(Bubble Sort) 时间复杂度: $O(n^2)$&#xA;void mp()//自定义mp()函数 { for(int i=1;i&amp;lt;=n-1;i++) { for(int j=1;j&amp;lt;=n-i;j++) { if(a[j]&amp;gt;a[j+1])//相邻元素比较，若逆序则交换（升序为左大于右，降序反之) { swap(a[j],a[j+1]); } } } } 2选择排序(Selection sort) 讲解:它的工作原理是：第一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，然后放到已排序的序列的末尾。以此类推，直到全部待排序的数据元素的个数为零。选择排序是不稳定的排序方法。&#xA;最好复杂度:$O(n^2)$&#xA;最坏复杂度:$O(n^2)$&#xA;void sz() { for(int i=1;i&amp;lt;=n-1;i++) { int minn=i; for(int j=1;j&amp;lt;=n-i;j++) { if(a[j]&amp;lt;a[minn]) { minn=j; } } swap(a[j],a[minn]); } } 3插入排序(Insertion Sort) 讲解:它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。&#xA;时间复杂度:$O(N^ ( 1-2) )$&#xA;void cr() { for(int i=2;i&amp;lt;=n;i++) { int k=1; int tmp =a[i]; while(a[k]&amp;lt;a[i]) { k++; } for(int j=i-1;j&amp;gt;=k;j--) { a[j+1]=a[j]; } a[k]=tmp;//插入 } } 4Sort排序 时间复杂度:$O(nlogn)$</description>
+    </item>
+    <item>
+      <title>部署Hexo</title>
+      <link>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hexo/</link>
+      <pubDate>Wed, 13 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hexo/</guid>
+      <description>环境环境 1.1 安装Git 请参考【1】 e 1.2 安装node.js 下载：http://nodejs.org/download/ 可以下载 node-v0.10.33-x64.msi&#xA;安装时直接保持默认配置即可。&#xA;NOTE：Hexo 3.9.0要求nodejs版本&amp;gt;6.9.0&#xA;Ubuntu下，直接执行下面的命令安装即可：&#xA;sudo apt-get install nodejs sudo apt-get install npm&#xA;配置Github 1.1 建立Repository 建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】 1.2 配置SSH-Key 参考【1】&#xA;安装Hexo 关于Hexo的安装配置过程，请以官方Hexo【2】给出的步骤为准。 3.1 Installation 打开Git命令行，执行如下命令&#xA;$ npm install -g hexo 3.2 Quick Start&#xA;Setup your blog 在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了D:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令&#xA;$ hexo init [info] Copying data [info] You are almost done! Don&amp;rsquo;t forget to run npm install before you start b logging with Hexo!</description>
+    </item>
+    <item>
+      <title>部署Hugo博客</title>
+      <link>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2/</guid>
+      <description>正文 准备: 1 要注册Github的账号 2 下载Git 3 下载并安装好Hugo 1 在终端&amp;amp;cmd当中输入hugo version验证是否安装好hugo,安装完成会出现版本号。如图: 2 在cmd&amp;amp;终端当中输入hugo new site xxxx(xxxx为你的博客文件名称),在所对应的文件夹中查看是否显示有xxxx名称的文件夹。打开之后再用cmd&amp;amp;终端打开,再次输入hugo new posts/xxxx.md(xxxx为你创建的第一个博文的名称,然后文件必须以MarkDown语法编辑,不能是用Html及其他语言) 在你创建的文件中打开content/posts/xxxx.md，在里面进行修改,例如draft=true,要修改为false(因为true是一个草稿,而false可以直接显示在你的网站中&amp;amp;本地运行) 未完待续~ </description>
+    </item>
+    <item>
+      <title>HelloWorld</title>
+      <link>https://teacher002.github.io/posts/helloworld/</link>
+      <pubDate>Tue, 12 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/helloworld/</guid>
+      <description>题目描述 编写一个能够输出 Hello,World! 的程序。&#xA;提示：&#xA;使用英文标点符号； Hello,World! 逗号后面没有空格。 H 和 W 为大写字母。 无 Hello,World! 代码 PHP Hello,World! C++ #include &amp;lt;iostream&amp;gt; using namespace std; int main () { cout&amp;lt;&amp;lt;&amp;#34;Hello World!&amp;#34;; return 0; } </description>
+    </item>
+    <item>
+      <title>部署HydroOJ</title>
+      <link>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hydrooj/</link>
+      <pubDate>Tue, 12 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/%E9%83%A8%E7%BD%B2hydrooj/</guid>
+      <description>部署: 这里提供了几套方案帮助您建立自己的站点，请选择适合您的方案并继续。 搭建过程中如果遇到问题欢迎 联系我们 提问。&#xA;服务器选择 不同服务商提供的 $\texttt{CPU}$ 主频不同，下方数据仅供参考。 最低服务器配置： $\texttt{CPU}$: 1核 内存: 2G。（约可允许 100 人使用 请尽量不要使用突发性能实例或共享型实例，这可能会导致评测时间计量不准确 CentOS 8 已于 2021-12-31 停止支持，后续不会为安全漏洞发布补丁，建议重装为其他操作系统。 如果使用虚拟机安装，推荐购买 UPS 保证供电稳定或是经常备份，突然断电易导致数据库损坏无法读取！ $\texttt{Tips}$: 兼容大部分 $\texttt{Linux}$ 发行版，推荐使用 $\texttt{Ubuntu}$ 22.04 （教程多，成功率高，上手简单），以下列表中系统不受支持：$CentOS$ $Alibaba Cloud Linux$ $TencentOS$&#xA;$\texttt{Tips}$: $Hydro$ 需要使用以下端口： $80$, $443$, $2019$, $88884, $5050$, $27017$，请确保这些端口空闲。 安装和安装后的所有操作均需要在 $\texttt{root}$ 权限下进行！（$\texttt{sudo su}$）。 宝塔面板已知出现多次高危漏洞，为防止数据丢失，请不要在生产环境中使用！&#xA;在终端运行下面的脚本，等待几分钟即可（建议复制防止敲错）： LANG=zh . &amp;lt;(curl https://hydro.ac/setup.sh) Tips: 如果有特殊需求，安装脚本支持一些可选的高级选项，以此方式调用： . &amp;lt;(curl https://hydro.ac/setup.sh ) &amp;ndash;foo &amp;ndash;bar &amp;ndash;no-caddy 不配置安装反向代理，只监听8888端口 &amp;ndash;judge 仅作为独立评测机安装&#xA;阿里云/腾讯云/华为云等等用户安装后如果不能访问 请百度搜索 xx云 放行80端口 脚本默认使用的为清华大学镜像。 安装完成后，从 http://服务器ip/ 访问网页端，注册一个账号，之后在终端中使用 hydrooj cli user setSuperAdmin 2 将首个注册用户设置为超级管理员。之后刷新页面，您应当能在上方导航栏看到控制面板入口。 进入控制面板，右侧系统设置，验证管理员密码后按需修改配置，注意 Server BaseURL 一项需要填写访问网站用的完整的 URL，以 / 结尾。（重要，务必正确填写，样例：https://hydro.</description>
+    </item>
+    <item>
+      <title>1</title>
+      <link>https://teacher002.github.io/posts/1/</link>
+      <pubDate>Tue, 12 Mar 2024 22:02:34 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/1/</guid>
+      <description>#Hello World C++代码&#xA;题目描述 编写一个能够输出 Hello,World! 的程序。&#xA;提示：&#xA;使用英文标点符号； Hello,World! 逗号后面没有空格。 H 和 W 为大写字母。 无 Hello,World! 代码 PHP Hello,World! C++ #include &amp;lt;iostream&amp;gt; using namespace std; int main () { cout&amp;lt;&amp;lt;&amp;#34;Hello World!&amp;#34;; return 0; } </description>
+    </item>
+    <item>
+      <title>Dev-C&#43;&#43;安装教程</title>
+      <link>https://teacher002.github.io/posts/devc&#43;&#43;%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://teacher002.github.io/posts/devc&#43;&#43;%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+      <description>编译器Dev-C++的安装及使用 1.Dev-C++的安装 下载链接: https://acm.nyist.edu.cn/file/2/Dev-Cpp_5.11_TDM-GCC_4.9.2_Setup.exe ​下载​: 点击此处 下载&#xA;安装&#xA;点击安装包 选择英文 点击ok&#xA;选择我同意&#xA;无脑选下一步&#xA;路径改不改都可 占不了多少空间&#xA;等待安装完毕 点击完成&#xA;选择语言为中文&#xA;选择喜欢的主题&#xA;点击ok 安装完成&#xA;2.Dev-C++的使用 Dev-C++的界面和常用按钮&#xA;主界面 常用按钮 功能 图标 快捷键 新建 Ctrl+N 编译 F9 运行 F10 编译运行 F11 调试 F5 使用Dev-C++的第一个程序&#xA;点击 文件-&amp;gt;新建-&amp;gt;源代码 并在界面中输入以下代码&#xA;#include&amp;lt;stdio.h&amp;gt; int main(){ printf(&amp;#34;Hello World!&amp;#34;); } Copy 输入完成后 点击编译按钮 进行编译 等待编译完成&#xA;若编译出错 如下图 请检查代码&#xA;编译成功后即可点击运行按钮 进行运行&#xA;使用Dev-C++进行程序调试&#xA;什么是调试&#xA;在我们日常的编写程序中难免会遇到一些小的bug，我们通过阅读代码的方式可能并不好揪出它们，这时我们就需要对着程序一步一步走，这就是调试&#xA;初次使用的设置&#xA;选择 工具-&amp;gt;编译选项&#xA;选择 代码生成/优化-&amp;gt;连接器 并更改产生调试信息为&amp;quot;YES&amp;quot; 并确定;&#xA;重新启动编译器 或者重新编译</description>
+    </item>
+  </channel>
+</rss>

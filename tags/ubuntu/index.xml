@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on Zhuqirui的杂货铺</title>
+    <link>https://teacher002.github.io/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Zhuqirui的杂货铺</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 Mar 2024 23:02:20 +0800</lastBuildDate>
+    <atom:link href="https://teacher002.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linus Torvalds 不满 Linux 6.9 中的一些 Bcachefs 代码</title>
+      <link>https://teacher002.github.io/posts/linus-torvalds-%E4%B8%8D%E6%BB%A1-linux-6.9-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B-bcachefs-%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/linus-torvalds-%E4%B8%8D%E6%BB%A1-linux-6.9-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B-bcachefs-%E4%BB%A3%E7%A0%81/</guid>
+      <description>cachefs 文件系统自从被纳入 Linux 6.7 内核的上游版本以来，一直保持着良好的运行状态。但现如今，随着 Bcachefs 的功能更新被提交到 Linux 6.9 合并窗口，引发了 Linus Torvalds 对其中一些 proposed code 的不满。&#xA;维护者 Kent Overstreet 将针对 Linux 6.9 的 Bcachefs 改动的拉取请求总结为：&#xA;Subvolume children btree；是为 walking subvolumes 提供用户空间界面所必需的，计划在稍后提供 对目录结构检查进行了大量改进 改进了日志管道，显着提高了 high iodepth write workloads 的性能 Discard path 改进：Discard path 更加高效，并且不再不必要地刷新日志 Buffered write path 现在可以避免占用 inode lock 调出用于 XFS 的各种库代码：time stats、mean_and_variance、darray、eytzinger、thread_with_file 新的 mm helper：memalloc_flags_{saverestore} mempool now does kvmalloc mempools 但让 Linus Torvalds 感到不解的是，这些补丁把 Bcachefs 代码中的一些元素移到了一些 library-type 的代码中，以至于可以轻松地被其他文件系统重用。&#xA;Linus Torvalds 在回应相关 PR 时表示：“我看了看 &amp;lsquo;make random bcachefs code be a library function&amp;rsquo; 的内容，觉得毫无意义，最终决定在没有进一步解释的情况下我不会使用它（老实说，我不认为这些解释站得住脚）。”</description>
+    </item>
+  </channel>
+</rss>

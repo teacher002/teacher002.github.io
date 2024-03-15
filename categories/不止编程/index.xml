@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>不止编程 on Zhuqirui的杂货铺</title>
+    <link>https://teacher002.github.io/categories/%E4%B8%8D%E6%AD%A2%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 不止编程 on Zhuqirui的杂货铺</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Mar 2024 23:02:20 +0800</lastBuildDate>
+    <atom:link href="https://teacher002.github.io/categories/%E4%B8%8D%E6%AD%A2%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用排序</title>
+      <link>https://teacher002.github.io/posts/%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Wed, 13 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F/</guid>
+      <description>1冒泡排序(Bubble Sort) 时间复杂度: $O(n^2)$&#xA;void mp()//自定义mp()函数 { for(int i=1;i&amp;lt;=n-1;i++) { for(int j=1;j&amp;lt;=n-i;j++) { if(a[j]&amp;gt;a[j+1])//相邻元素比较，若逆序则交换（升序为左大于右，降序反之) { swap(a[j],a[j+1]); } } } } 2选择排序(Selection sort) 讲解:它的工作原理是：第一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，然后放到已排序的序列的末尾。以此类推，直到全部待排序的数据元素的个数为零。选择排序是不稳定的排序方法。&#xA;最好复杂度:$O(n^2)$&#xA;最坏复杂度:$O(n^2)$&#xA;void sz() { for(int i=1;i&amp;lt;=n-1;i++) { int minn=i; for(int j=1;j&amp;lt;=n-i;j++) { if(a[j]&amp;lt;a[minn]) { minn=j; } } swap(a[j],a[minn]); } } 3插入排序(Insertion Sort) 讲解:它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。&#xA;时间复杂度:$O(N^ ( 1-2) )$&#xA;void cr() { for(int i=2;i&amp;lt;=n;i++) { int k=1; int tmp =a[i]; while(a[k]&amp;lt;a[i]) { k++; } for(int j=i-1;j&amp;gt;=k;j--) { a[j+1]=a[j]; } a[k]=tmp;//插入 } } 4Sort排序 时间复杂度:$O(nlogn)$</description>
+    </item>
+  </channel>
+</rss>

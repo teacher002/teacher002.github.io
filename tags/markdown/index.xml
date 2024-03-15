@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on Zhuqirui的杂货铺</title>
+    <link>https://teacher002.github.io/tags/markdown/</link>
+    <description>Recent content in Markdown on Zhuqirui的杂货铺</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 Mar 2024 23:02:20 +0800</lastBuildDate>
+    <atom:link href="https://teacher002.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MarkDown讲解</title>
+      <link>https://teacher002.github.io/posts/xuanzexuanze/</link>
+      <pubDate>Thu, 14 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/xuanzexuanze/</guid>
+      <description>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。 它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。 由于 Markdown 的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。 如 GitHub、Reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge、简书等，甚至还能被使用来撰写电子书。 优势 世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho等。用于编写说明文档，以“README.md”的文件名保存在软件的目录下面。Markdown可以快速转化为演讲PPT、Word产品文档甚至是用非常少量的代码完成最小可用原型。&#xA;发展历程 John Gruber在2004年创造了Markdown语言，在语法上有很大一部分是跟亚伦·斯沃茨（Aaron Swartz）共同合作的。这个语言的目的是希望大家使用“易于阅读、易于撰写的纯文字格式，并选择性的转换成有效的XHTML（或是HTML）”。 其中最重要的设计是可读性，也就是说这个语言应该要能直接在字面上的被阅读，而不用被一些格式化指令标记（像是RTF与HTML）。 因此，它是现行电子邮件标记格式的惯例，虽然它也借鉴了很多早期的标记语言，如：Setext、Texile、reStructuredText。 标准化 Markdown已经成为典型的转换为HTML的非正式规范 和参考实现。随着时间的推移，出现了许多Markdown实现。人们开发这些主要是由于在基本语法之上需要额外的功能 - 例如表格，脚注，定义列表（技术上的HTML描述列表）和HTML块内的Markdown。其中一些行为偏离了最开始的参考实现。与此同时，非正式规范中的一些含糊不清引起了人们的注意 。这些问题促使Markdown解析器的一些开发人员努力实现标准化。 2016年3月发布了RFC 7763和RFC 7764。RFC 7763 从原始变体引入了MIME类型 text/markdown。RFC 7764讨论并注册了MultiMarkdown、GitHub Flavored Markdown (GFM)、Pandoc、CommonMark及Markdown等变体。 CommonMark 从2012年开始，包括Jeff Atwood和John MacFarlane在内的一群人启动了标准化工作。一个社区网站旨在记录可用于文档作者和开发人员的各种工具和资源，以及各种markdown实现的实现者。 2014年9月，Gruber反对在这一工作中继续使用“Markdown”这个名字，其被更名为CommonMark。 CommonMark发布了规范、参考实现和测试包的几个版本，并计划在2018年宣布最终的1.0规范和测试包。 GFM 2017年，GitHub发布了基于CommonMark的GitHub Flavored Markdown（GFM）的正式规范。 除了表格、删除线、自动链接和任务列表被GitHub规范作为扩展添加之外，它遵循CommonMark规范。 GitHub还相应地更改了其站点上使用的解析器，这要求更改某些文档 - 例如，GFM要求创建标题的哈希符号由空格字符分隔。 Markdown Extra Markdown Extra是一种轻量级标记语言，基于在PHP（最初）、Python和Ruby中实现的Markdown。它添加了普通Markdown语法不具备的功能。内容管理系统支持Markdown Extra，例如Drupal，TYPO3和MediaWiki。 它为Markdown添加了以下功能： HTML块内的markdown标记 具有id / class属性的元素 围栏代码块 表格 定义清单 脚注 缩写</description>
+    </item>
+  </channel>
+</rss>
