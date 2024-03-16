@@ -2,10 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://teacher002.github.io/tags/3.1415926/</loc>
-    <lastmod>2024-03-14T23:02:20+08:00</lastmod>
-  </url><url>
     <loc>https://teacher002.github.io/categories/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/tags/fcitx-5/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/posts/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/tags/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/tags/ubuntu/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/posts/ubuntu%E8%BE%93%E5%85%A5%E6%B3%95/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/categories/ubuntu%E6%95%99%E5%AD%A6/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2024-03-15T23:02:20+08:00</lastmod>
+  </url><url>
+    <loc>https://teacher002.github.io/tags/3.1415926/</loc>
     <lastmod>2024-03-14T23:02:20+08:00</lastmod>
   </url><url>
     <loc>https://teacher002.github.io/posts/hello%E4%BB%A3%E7%A0%81/</loc>
@@ -36,18 +60,6 @@
     <lastmod>2024-03-14T23:02:20+08:00</lastmod>
   </url><url>
     <loc>https://teacher002.github.io/tags/math/</loc>
-    <lastmod>2024-03-14T23:02:20+08:00</lastmod>
-  </url><url>
-    <loc>https://teacher002.github.io/posts/</loc>
-    <lastmod>2024-03-14T23:02:20+08:00</lastmod>
-  </url><url>
-    <loc>https://teacher002.github.io/tags/</loc>
-    <lastmod>2024-03-14T23:02:20+08:00</lastmod>
-  </url><url>
-    <loc>https://teacher002.github.io/tags/ubuntu/</loc>
-    <lastmod>2024-03-14T23:02:20+08:00</lastmod>
-  </url><url>
-    <loc>https://teacher002.github.io/</loc>
     <lastmod>2024-03-14T23:02:20+08:00</lastmod>
   </url><url>
     <loc>https://teacher002.github.io/posts/piday/</loc>

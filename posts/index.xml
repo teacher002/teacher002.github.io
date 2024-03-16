@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Zhuqirui的杂货铺</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 14 Mar 2024 23:02:20 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2024 23:02:20 +0800</lastBuildDate>
     <atom:link href="https://teacher002.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 配置 Fcitx 5 中文输入法</title>
+      <link>https://teacher002.github.io/posts/ubuntu%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Fri, 15 Mar 2024 23:02:20 +0800</pubDate>
+      <guid>https://teacher002.github.io/posts/ubuntu%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description>安装 检查系统中文环境 在 Ubuntu 设置中打开「区域与语言」—— 「管理已安装的语言」，然后会自动检查已安装语言是否完整。若不完整，根据提示安装即可。 最小安装 为使用 Fcitx 5，需要安装三部分基本内容：&#xA;Fcitx 5 主程序 中文输入法引擎 图形界面相关 按照这个思路，可以直接使用 apt 进行安装：&#xA;sudo apt install fcitx5 \ fcitx5-chinese-addons \ fcitx5-frontend-gtk4 fcitx5-frontend-gtk3 fcitx5-frontend-gtk2 \ fcitx5-frontend-qt5 安装中文词库 在 GitHub 打开维基百科中文拼音词库 的 Releases 界面，下载最新版的 .dict 文件。按照 README 的指导，将其复制到 ~/.local/share/fcitx5/pinyin/dictionaries/ 文件夹下即可。&#xA;配置 设置为默认输入法 使用 im-config 工具可以配置首选输入法，在任意命令行输入：&#xA;im-config 环境变量 需要为桌面会话设置环境变量，即将以下配置项写入某一配置文件中：&#xA;export XMODIFIERS=@im=fcitx export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx 如果使用 Bash 作为 shell，则建议写入至 ~/.bash_profile，这样只对当前用户生效，而不影响其他用户。&#xA;另一个可以写入此配置的文件为系统级的 /etc/profile。 开机自启动 安装 Fcitx 5 后并没有自动添加到开机自启动中，每次开机后需要手动在应用程序中找到并启动，非常繁琐。&#xA;解决方案非常简单，在 Tweaks（sudo apt install gnome-tweaks）中将 Fcitx 5 添加到「开机启动程序」列表中即可。</description>
+    </item>
     <item>
       <title>Hello, World!</title>
       <link>https://teacher002.github.io/posts/hello%E4%BB%A3%E7%A0%81/</link>
